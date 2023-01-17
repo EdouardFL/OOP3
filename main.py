@@ -39,8 +39,9 @@ class Hero(NPC):
     def attaque(self, cible):
         pouvoir = random.randint(1,20)
         if pouvoir == 20:
-            cible.subir_dommage(8)
-            print("Attaque critique !, vous attaquez", cible.Nom, "Pour: 8 PV")
+            d8 = random.randint(1,8)
+            cible.subir_dommage(d8)
+            print("Attaque critique !, vous attaquez", cible.Nom, "Pour:", d8)
         elif pouvoir == 1:
             print("Vous avez rate votre attaque !")
         elif 2 <= pouvoir <= 19:
